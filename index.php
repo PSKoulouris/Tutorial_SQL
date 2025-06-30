@@ -16,7 +16,7 @@ $success = mysqli_real_connect(
     $port
 );
 
-
+/*
  if ($conn->connect_error) {
     echo 'Errno: '.$conn->connect_errno;
     echo '<br>';
@@ -30,7 +30,21 @@ $success = mysqli_real_connect(
     echo '<br>';
     echo 'Protocol version: '.$conn->protocol_version;
     echo '<br>';
- }
+ } */
+
+
+    $sql = "SELECT * FROM students";
+    $results = $conn -> query($sql);
+
+    if ($results->num_rows > 0) {
+        while ($row = $results->fetch_assoc()) {
+            echo "id: " . $row["id"] . " Name: " . $row["name"] . " Email: " . $row["email"] . $row["created_at"] . "<br>";
+    }
+
+    }else {
+        echo "No data available";
+    }
+
 
  // Close the database connection
  $conn->close();
