@@ -19,7 +19,7 @@ $success = mysqli_real_connect(
 if ($conn -> connect_error) {
     die("Connection failed" . $conn->connect_error);
 } else {
-   echo "connected with success";
+   echo "connected with success"."<br>";
 }
 
 
