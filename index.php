@@ -40,8 +40,7 @@ $success = mysqli_real_connect(
         while ($row = $results->fetch_assoc()) {
             echo "id: " . $row["id"] . " Name: " . $row["name"] . " Email: " . $row["email"] . $row["created_at"] . "<br>";
     }
-
-    }else {
+        } else {
         echo "No data available";
     }
 
