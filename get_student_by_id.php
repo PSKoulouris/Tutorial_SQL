@@ -28,7 +28,7 @@ if (!$success) {
 }
 
 //get Id from the form:
-$id = $_POST["id"];
+$id = $_POST["name_id"];
 //sql statement:
 $sql = "SELECT * FROM students WHERE id = ?";
 
@@ -36,9 +36,9 @@ $sql = "SELECT * FROM students WHERE id = ?";
 
 $prep_statement = $conn -> prepare($sql);
 $prep_statement -> bind_param("i", $id);
-$prepared_statement -> execute();
+$prep_statement -> execute();
 
-$results = $prepared_statement -> get_result();
+$results = $prep_statement -> get_result();
 
 //return students from results:
 
@@ -46,20 +46,10 @@ if ($results -> num_rows > 0) {
     $row = $results -> fetch_assoc();
     echo "ID: " . $row["id"] . " Email: " . $row["email"] . " Password: " . $row["password"] . "Date Created: " . $row["created_at"] . "<br>";
 } else {
-    echo "No tudent with the selected id exists.";
+    echo "No student with the selected id exists.";
 }
 
 $prep_statement -> close();
 $conn -> close();
-
-
-
-
-
-$conn->close();
-
-
-
-
 
 ?>
