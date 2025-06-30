@@ -8,7 +8,7 @@ $port = 8889;
 
 $conn = mysqli_init();
 $success = mysqli_real_connect(
-   $link,
+   $conn,
    $host,
    $user,
    $password,
@@ -17,11 +17,27 @@ $success = mysqli_real_connect(
 );
 
 if ($conn -> connect_error) {
-    echo "connection failed";
-    exit();
+    die("Connection failed" . $conn->connect_error);
 } else {
-    "connected with success";
+   echo "connected with success";
 }
+
+
+$email = $_POST["email"];
+$password = $_POST["password"];
+
+$sql = "INSERT INTO students (email, password) VALUES (?,?)";
+
+$prepared_statement = $conn -> prepare($sql);
+$prepared_statement -> bind_param("ss", $email, $password);
+
+if ($prepared_statement -> execute()){
+    echo "data successfully inserted";
+} else {
+    echo "Error: " . $sql . "<br>" . $conn -> error;
+}
+
+$prepared_statement -> close();
 
 $conn -> close();
 

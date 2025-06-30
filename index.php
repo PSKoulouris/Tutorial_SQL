@@ -4,7 +4,7 @@ $user = 'root';
 $password = 'root';
 $db = 'dbmgt';
 $host = 'localhost';
-$port = 8889;
+$port = 8888;
 
 $conn = mysqli_init();
 $success = mysqli_real_connect(
@@ -48,8 +48,4 @@ $success = mysqli_real_connect(
  // Close the database connection
  $conn->close();
  
-
-
-
-
 ?>
