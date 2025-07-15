@@ -49,7 +49,7 @@ if ($results -> num_rows > 0) {
     echo "No student with the selected id exists.";
 }
 
-$prep_statement -> close();
+$prep_statement -> close()
 
 $conn -> close();
 
