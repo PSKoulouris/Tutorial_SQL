@@ -51,6 +51,6 @@ if ($results -> num_rows > 0) {
 
 $prep_statement -> close();
 
-$conn -> close();
+$conn -> close()
 
 ?>
