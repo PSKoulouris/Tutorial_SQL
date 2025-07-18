@@ -38,7 +38,7 @@ $prep_statement = $conn -> prepare($sql);
 $prep_statement -> bind_param("i", $id);
 $prep_statement -> execute();
 
-$results = $prep_statement -> get_result();
+$results = $prep_statement -> get_result()
 
 //return students from results:
 
