@@ -40,7 +40,7 @@ $prep_statement -> execute();
 
 $results = $prep_statement -> get_result();
 
-//return students from results:
+//return students from results
 
 if ($results -> num_rows > 0) {
     $row = $results -> fetch_assoc();
