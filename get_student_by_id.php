@@ -27,7 +27,7 @@ if (!$success) {
     echo "Connection successfull" . "<br>";
 }
 
-//get Id from the form:
+//get id from the form:
 $id = $_POST["name_id"];
 //sql statement:
 $sql = "SELECT * FROM students WHERE id = ?";
