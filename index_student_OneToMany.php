@@ -32,6 +32,7 @@ $sql = "SELECT *
         FROM students AS A
         INNER JOIN assignment AS B
         WHERE  A.id = B.student_id";
+        
 $results = $conn->query($sql);
 
 if ($results->num_rows>0) {
@@ -49,4 +50,5 @@ if ($results->num_rows>0) {
 }
 
 $conn->close();
+
 ?>
