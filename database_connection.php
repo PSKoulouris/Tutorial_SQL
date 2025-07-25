@@ -24,3 +24,5 @@ if ($conn->connect_error) {
 } else {
     echo "Connection to databse dbmgt successful" . "<br><br>";
 }
+
+?>
