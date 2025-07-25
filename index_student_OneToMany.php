@@ -1,5 +1,5 @@
 <?php
-  //connecto database and return results for students and assignments with one to many relationships
+  //connection to database and return results for students and assignments with one to many relationships
 
   //databaae connection 
 
@@ -32,7 +32,7 @@ $sql = "SELECT *
         FROM students AS A
         INNER JOIN assignment AS B
         WHERE  A.id = B.student_id";
-        
+
 $results = $conn->query($sql);
 
 if ($results->num_rows>0) {
@@ -43,7 +43,7 @@ if ($results->num_rows>0) {
         } else {
             $submissionStatus = "Due";
         }
-        echo "Id: " . $row["id"] . " Email: " . $row["email"] . " Assignment type: " . $row["name"] . " Assignment submission: " . $submissionStatus . " Submission date: " . $row["target_date"] . "<br>";
+        echo "Id: " . $row["student_id"] . " Email: " . $row["email"] . "<br>" . " Assignment type: " . $row["name"] . " Assignment submission: " . $submissionStatus . " Submission date: " . $row["target_date"] . "<br><br>";
     }
 } else {
     echo "No data available";
