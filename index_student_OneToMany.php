@@ -1,7 +1,7 @@
 <?php
   //connection to database and return results for students and assignments with one to many relationships
 
-  //databaae connection 
+  //database connection 
 
   $user = "root";
   $password = "root";
@@ -27,11 +27,20 @@
   }
 */
 
+// SQL query and result return:
+/*
+$sql = "SELECT *
+        FROM students AS A
+        INNER JOIN assignment AS B
+        ON A.id = B.student_id
+        ";
+*/
 
 $sql = "SELECT *
         FROM students AS A
         INNER JOIN assignment AS B
-        WHERE  A.id = B.student_id";
+        ON A.id = B.student_id
+        WHERE A.id = 3";
 
 $results = $conn->query($sql);
 
