@@ -49,4 +49,9 @@ if ($results->num_rows > 0) {
         echo "No data available for student Id: " . $id;
     }
 
+//close prepared statement and connection 
+    $prepared_statement->close();
+    $conn->close();
+
+
 ?>
