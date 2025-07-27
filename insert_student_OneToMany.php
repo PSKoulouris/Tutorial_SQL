@@ -43,4 +43,8 @@ if($prepared_statement_2->execute()){
 $prepared_statement->close();
 $prepared_statement_2->close();
 $conn->close();
+
+//However, If a student already exist, then the student will be registered with a new id 
+//and not as expected with one user entry and two assignment entries. 
+//Solution: condition statement for user entry before defining student id
 ?>
