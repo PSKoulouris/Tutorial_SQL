@@ -54,7 +54,7 @@ if($results_1->num_rows>0) {
     $prepared_statement_2->close();
 }
 
-//Insert information into Assignments with student_id as foreign key:
+//Insert information into assignments with student_id as foreign key:
 
 $sql_3 = "INSERT INTO assignment (name, is_done, target_date, student_id) VALUES (?,?,?,?)";
 
