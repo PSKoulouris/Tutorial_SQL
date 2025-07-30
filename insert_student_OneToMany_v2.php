@@ -30,7 +30,7 @@ $prepared_statement_check->execute();
 //get results:
 $results_1 = $prepared_statement_check->get_result();
 
-//if student exist, get id_student = id
+//if student exist, get id_student = id:
 if($results_1->num_rows>0) {
     $row = $results_1->fetch_assoc();
     $student_id = $row["id"];
