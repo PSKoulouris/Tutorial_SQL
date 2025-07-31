@@ -17,7 +17,7 @@ $id = $_POST["name_id"];
 
         //Begin transaction:
         $conn->begin_transaction();
-        
+
         //SQL to update password and email with student id from assignment table by joining students and assignment table 
         $sql ="UPDATE students AS S
                 INNER JOIN assignment AS A
@@ -30,11 +30,11 @@ $id = $_POST["name_id"];
         $prepared_statement_1 = $conn->prepare($sql);
         $prepared_statement_1->bind_param("ssi",$email,$password,$id);
         if ($prepared_statement_1->execute()){
-            echo "Credentials Updated successfully: " . $email . ", " . $password;
+            echo "Credentials Updated successfully: " . $email . ", " . $password . "<br>";
         } else {
-            echo "Credentials not updated: " . $conn->error;
+            echo "Credentials not updated: " . $conn->error . "<br>";
         }
-
+        //close prepared statemnent_1:
         $prepared_statement_1->close();
 
         // Select new inserted information and dispaly them:
@@ -56,9 +56,10 @@ $id = $_POST["name_id"];
                      . "email: " . $row["email"] . "<br>"
                     . "password: " . $row["password"]. "<br><br>"; 
         } else {
-            echo "No data available";
+            echo "No data available" . "<br>";
         }
 
+        //Close prepared_statement_2:
         $prepared_statement_2->close();
 
         //Commit changes:
