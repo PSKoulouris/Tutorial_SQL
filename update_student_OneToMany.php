@@ -14,7 +14,6 @@ $id = $_POST["name_id"];
 //to ensure updates are saved only if all commands succeed or rollback any changes if an error occurs:
 
     try{
-
         //Begin transaction:
         $conn->begin_transaction();
 
@@ -25,7 +24,7 @@ $id = $_POST["name_id"];
                 SET S.email = ?, S.password = ?
                 WHERE student_id = ?" ;
 
-        //prepared statement, binding parameters and execution:
+        //prepared statement, binding parameters, and execution:
 
         $prepared_statement_1 = $conn->prepare($sql);
         $prepared_statement_1->bind_param("ssi",$email,$password,$id);
@@ -34,8 +33,10 @@ $id = $_POST["name_id"];
         } else {
             echo "Credentials not updated: " . $conn->error . "<br>";
         }
+
         //close prepared statemnent_1:
         $prepared_statement_1->close();
+
 
         // Select new inserted information and dispaly them:
 
