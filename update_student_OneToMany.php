@@ -24,7 +24,7 @@ $id = $_POST["name_id"];
                 SET S.email = ?, S.password = ?
                 WHERE student_id = ?" ;
 
-        //prepared statement, binding parameters, and execution:
+        //prepared statement, binding parameters, and execution
 
         $prepared_statement_1 = $conn->prepare($sql);
         $prepared_statement_1->bind_param("ssi",$email,$password,$id);
