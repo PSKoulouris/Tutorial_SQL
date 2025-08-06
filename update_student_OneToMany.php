@@ -11,7 +11,7 @@ $password = $_POST["name_password"];
 $id = $_POST["name_id"];
 
 // Use begin_transaction, commit, and rollback with try/catch
-//to ensure updates are saved only if all commands succeed or rollback any changes if an error occurs:
+// to ensure updates are saved only if all commands succeed or rollback any changes if an error occurs:
 
     try{
         //Begin transaction:
