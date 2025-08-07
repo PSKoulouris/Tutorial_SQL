@@ -10,8 +10,7 @@ $email = $_POST["name_email"];
 $password = $_POST["name_password"];
 $id = $_POST["name_id"];
 
-// Use begin_transaction, commit, and rollback with try/catch
-// to ensure updates are saved only if all commands succeed or rollback any changes if an error occurs:
+// Use begin_transaction, commit, and rollback with try/catch to ensure updates are saved only if all commands succeed or rollback any changes if an error occurs:
 
     try{
         //Begin transaction:
@@ -24,7 +23,7 @@ $id = $_POST["name_id"];
                 SET S.email = ?, S.password = ?
                 WHERE student_id = ?" ;
 
-        //prepared statement, binding parameters, and execution
+        //prepared statement, binding parameters, and execution:
 
         $prepared_statement_1 = $conn->prepare($sql);
         $prepared_statement_1->bind_param("ssi",$email,$password,$id);
