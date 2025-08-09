@@ -10,13 +10,13 @@ $email = $_POST["name_email"];
 $password = $_POST["name_password"];
 $id = $_POST["name_id"];
 
-// Use begin_transaction, commit, and rollback with try/catch to ensure updates are saved only if all commands succeed or rollback any changes if an error occurs:
+// Use begin_transaction, commit, and rollback with Try/Catch to ensure updates are saved only if all commands succeed or rollback any changes if an error occurs:
 
     try{
         //Begin transaction:
         $conn->begin_transaction();
 
-        //SQL to update password and email with student id from assignment table by joining students and assignment table 
+        //SQL to update password and email with student id from assignment table by joining students and assignment table: 
         $sql ="UPDATE students AS S
                 INNER JOIN assignment AS A
                 ON S.id = A.student_id
