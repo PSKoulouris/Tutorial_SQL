@@ -67,7 +67,7 @@ $id = $_POST["name_id"];
         echo "Transaction commited successfully";
     
     } catch (Exception $e){
-        //rollback to cancel any changes that occured during failed transaction:
+        //rollback to cancel any changes that occured during failed transaction::
         $conn->rollback(); 
         echo "Transaction failed: " . $e->getMessage();
     }
