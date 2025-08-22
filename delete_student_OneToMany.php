@@ -14,7 +14,7 @@ $id = $_POST["name_id"];
     try{
         $conn->begin_transaction();
 
-        //sql qerry 1:
+        //sql qerry 1: DELETE from both tables without CASCADE option
         $sql_1 = "DELETE S, A
                   FROM students AS S
                  INNER JOIN assignment AS A
