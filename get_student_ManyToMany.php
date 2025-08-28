@@ -9,6 +9,11 @@ $sql = "SELECT A.student_id, A.target_date, A.name, A.is_done,C.name AS course_n
         FROM assignment AS A, course AS C, enrolements_links AS L
         WHERE A.id = L.assignment_id AND C.id = L.course_id";
 
+/*$sql = "SELECT A.student_id, A.target_date, A.name, A.is_done,C.name AS course_name, C.category, C.credits, L.grade
+        FROM assignment AS A
+        INNER JOIN enrolements_links AS L ON A.id = L.assignment_id
+        INNER JOIN course AS C ON C.id = L.course_id"; */
+
 $results = $conn->query($sql);
 
 if($results->num_rows > 0){
