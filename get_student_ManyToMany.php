@@ -5,7 +5,7 @@ error_reporting(E_ALL);
 
 include "database_connection.php";
 
-$sql = "SELECT A.student_id, A.target_date, A.name, A.is_done, C.category, C.credits, L.grade
+$sql = "SELECT A.student_id, A.target_date, A.name, A.is_done,C.name AS course_name, C.category, C.credits, L.grade
         FROM assignment AS A, course AS C, enrolements_links AS L
         WHERE A.id = L.assignment_id AND C.id = L.course_id";
 
@@ -18,7 +18,7 @@ if($results->num_rows > 0){
         } else {
             $is_done = "NO";
         }
-        echo "Student_id: " . $row["student_id"] . " Due date: " . $row["target_date"] . " Name: " . $row["name"] . " Submitted: " .$is_done . " Category: ". $row["category"] . " Credits: ".$row["credits"]. " Grade: ". $row["grade"] . "<br><br>";
+        echo "Student_id: " . $row["student_id"] . " Due date: " . $row["target_date"] . " Name: " . $row["name"] . " Course: ". $row["course_name"] . " Submitted: " .$is_done . " Category: ". $row["category"] . " Credits: ".$row["credits"]. " Grade: ". $row["grade"] . "<br><br>";
     }
 } else {
     echo "No data available";
