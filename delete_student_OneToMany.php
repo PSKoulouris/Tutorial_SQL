@@ -15,12 +15,12 @@ $id = $_POST["name_id"];
         $conn->begin_transaction();
 
         //sql qerry 1: DELETE from both tables without CASCADE option
-        $sql_1 = "DELETE FROM students WHERE id = ?";
-        //"DELETE S, A
-                  //FROM students AS S
-                 //INNER JOIN assignment AS A
-                 //ON S.id = A.student_id
-                 //WHERE S.id = ?";
+        $sql_1 = //"DELETE FROM students WHERE id = ?"; When using CASCADE; will delete both tables:
+                "DELETE S, A
+                  FROM students AS S
+                 INNER JOIN assignment AS A
+                 ON S.id = A.student_id
+                 WHERE S.id = ?";
         
         //Prepared statement: prepare, bind paramaters,and execute:
         $prepared_statement_1 = $conn->prepare($sql_1);
