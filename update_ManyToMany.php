@@ -28,7 +28,7 @@ try {
               SET is_done = ?, name = ?, target_date = ?
               WHERE student_id = ?";
     $prep_stmt_1 = $conn->prepare($sql_1);
-    $prep_stmt_1 ->bind_param("issi", $assignment_is_done, $assignment_name, $assignment_date, $student_id);
+    $prep_stmt_1 ->bind_param("issi", $assignment_is_done, $assignment_name, $assignment_date, $student_id);//order of parameters matters
     if($prep_stmt_1->execute()){
         echo "query sql1 successfully executed for student ID: " . $student_id . "<br><br>";
     } else {
